@@ -1,2 +1,6 @@
 # macos
-Toolbox for setting up a MacOS dev environment.
+> Toolbox for setting up a macOS dev environment.
+
+## Dotfiles
+
+## Setup
