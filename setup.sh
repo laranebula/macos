@@ -12,6 +12,18 @@ do
 done
 
 #
+# Terminal
+#
+
+# removes last login details of zsh
+[ -e $HOME/.hushlogin ] || touch $HOME/.hushlogin
+
+# configurate terminal app
+{
+  defaults write com.apple.Terminal ShowLineMarks -int 0
+}
+
+#
 # File System
 #
 
