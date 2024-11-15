@@ -34,14 +34,28 @@ done
 [ -e $HOME/.hushlogin ] || touch $HOME/.hushlogin
 
 # configurate terminal app
-{
-  defaults write com.apple.Terminal ShowLineMarks -int 0
-}
+#{
+#  defaults write com.apple.Terminal ShowLineMarks -int 0
+#}
 
 #
 # File System
 #
 
+directories=(  )
+
+printf "# setting up file system...\n"
+
+for directory in $directories; do
+  printf "searching for %s ... " $directory
+  if [ -d $HOME/$directory ]; then
+    printf "already there.\n"
+  else
+    printf "creating ... "
+    mkdir $HOME/$directory &> /dev/null
+    [ -d $HOME/$directory ] && printf "done.\n"
+  fi
+done
 
 #
 # macOS
