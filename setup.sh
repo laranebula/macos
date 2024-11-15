@@ -19,7 +19,7 @@ for file in $dotfiles; do
     printf "already there.\n" $file
   else
     printf "\ndownloading %s ... " $file
-    curl https://raw.githubusercontent.com/$user/$repo/master/$file > $HOME/$file &> /dev/null
+    curl https://raw.githubusercontent.com/$user/$repo/main/$file > $HOME/$file &> /dev/null
     [ -e $HOME/$file ] && printf "done.\n"
   fi
 done
