@@ -11,7 +11,7 @@ repo="macos"
 # Dotfiles
 #
 
-dotfiles=( .profile )
+dotfiles=( .profile .gitconfig )
 
 printf "# setting up dotfiles...\n"
 
