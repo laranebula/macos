@@ -6,8 +6,10 @@ sudo -v
 #
 # Dotfiles
 #
-for file in ( .profile )
-do
+
+dotfiles=( .profile )
+
+for file in $dotfiles; do
   [ -e $file ] || curl https://raw.githubusercontent.com/laranebula/macos/master/$file > $HOME/$file &> /dev/null
 done
 
