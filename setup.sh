@@ -13,12 +13,14 @@ repo="macos"
 
 dotfiles=( .profile )
 
+printf "# setting up dotfiles...\n"
+
 for file in $dotfiles; do
-  printf "checking for %s ... " $file
+  printf "searching for %s ... " $file
   if [ -e $HOME/$file ]; then
-    printf "already there.\n" $file
+    printf "already there.\n"
   else
-    printf "\ndownloading %s ... " $file
+    printf "downloading ... "
     curl https://raw.githubusercontent.com/$user/$repo/main/$file > $HOME/$file &> /dev/null
     [ -e $HOME/$file ] && printf "done.\n"
   fi
