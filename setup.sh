@@ -3,6 +3,10 @@
 # ask for admin password
 sudo -v
 
+# github repository
+user="laranebula"
+repo="macos"
+
 #
 # Dotfiles
 #
@@ -10,7 +14,14 @@ sudo -v
 dotfiles=( .profile )
 
 for file in $dotfiles; do
-  [ -e $file ] || curl https://raw.githubusercontent.com/laranebula/macos/master/$file > $HOME/$file &> /dev/null
+  printf "checking for %s ... " $file
+  if [ -e $HOME/$file ]; then
+    printf "already there.\n" $file
+  else
+    printf "\ndownloading %s ... " $file
+    curl https://raw.githubusercontent.com/$user/$repo/master/$file > $HOME/$file &> /dev/null
+    [ -e $HOME/$file ] && printf "done.\n"
+  fi
 done
 
 #
