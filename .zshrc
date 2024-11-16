@@ -2,4 +2,4 @@
 #
 # Prompt
 #
-export PS1="%n > %1~ %# "
+export PS1="%n > %~ %# "
