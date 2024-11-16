@@ -30,14 +30,6 @@ for file in ${dotfiles[@]}; do
   fi
 done
 
-# manage dotfiles
-printf "detect default shell ... "
-case $(basename $SHELL) in
-  zsh) printf "setup zsh ... "; source $HOME/.zshrc; printf "done.\n" ;;
-  bash) printf "setup bash ... "; source $HOME/.bashrc; printf "done.\n" ;;
-  *) printf "unknown shell type.\n"
-esac
-
 #
 # Terminal
 #
