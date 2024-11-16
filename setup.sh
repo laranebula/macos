@@ -16,7 +16,7 @@ dotfiles=( .profile .gitconfig )
 printf "# setting up dotfiles...\n"
 
 # download dotfiles
-for file in $dotfiles; do
+for file in ${dotfiles[@]}; do
   printf "searching for %s ... " $file
   if [ -e $HOME/$file ]; then
     printf "already there.\n"
@@ -52,7 +52,7 @@ directories=(  )
 printf "# setting up file system...\n"
 
 # create directories
-for directory in $directories; do
+for directory in ${directories[@]}; do
   printf "searching for %s ... " $directory
   if [ -d $HOME/$directory ]; then
     printf "already there.\n"
