@@ -14,7 +14,7 @@ repo="macos"
 # Dotfiles
 #
 
-dotfiles=( .profile .gitconfig )
+dotfiles=( .zshrc .bashrc .gitconfig )
 
 printf "# setting up dotfiles...\n"
 
@@ -33,7 +33,8 @@ done
 # manage dotfiles
 printf "detect default shell ... "
 case $(basename $SHELL) in
-  zsh) printf "setup zsh ... "; cp $HOME/.profile $HOME/.zshrc; printf "done.\n" ;;
+  zsh) printf "setup zsh ... "; source $HOME/.zshrc; printf "done.\n" ;;
+  bash) printf "setup bash ... "; source $HOME/.bashrc; printf "done.\n" ;;
   *) printf "unknown shell type.\n"
 esac
 
