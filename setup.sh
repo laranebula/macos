@@ -3,6 +3,9 @@
 # ask for admin password
 sudo -v
 
+# keep sudo during script execution
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # github repository
 user="laranebula"
 repo="macos"
